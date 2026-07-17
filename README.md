@@ -1,21 +1,33 @@
-# CS50P Problem Sets
+# SGX Portfolio Tracker
 
-Solutions to Harvard University's CS50's Introduction 
-to Programming with Python.
+## Video Demo: 
 
-## Problem Sets Completed
-- Week 0: Functions & Variables
-- Week 1: Conditionals
-- Week 2: Loops 
-- Week 3: Exceptions
-- Week 4: Libraries
-- Week 5: Unit Tests
-- Week 6: File I/O
-- Week 7: Regular Expressions
-- Week 8: Object-Oriented Programming
-- Week 9:Et Cetera
+## Description
+A command-line portfolio tracker for SGX-listed stocks.
+Users can add, remove, and view their stock holdings with live prices fetched from Yahoo Finance.
+The portfolio persists between sessions via a CSV file.
 
-## Certificate
-CS50's Introduction to Programming with Python — 
-Harvard University, July 2026
-https://certificates.cs50.io/8ac63d3a-a772-4b8f-b15f-bf9248531d47.pdf?size=letter
+## Features
+- Add SGX-listed stocks with purchase price and number of shares
+- Remove stocks from your portfolio
+- View live prices, current value, and gain/loss for each holding
+- Data persists between sessions in portfolio.csv
+
+## Usage
+Run the program with:
+python project.py
+
+Proceed to choose from the menu:
+1. Add stock — enter ticker (must end in .SI), shares, and purchase price
+2. Remove stock — enter ticker to remove
+3. View portfolio — displays a formatted table with live prices
+4. Quit
+
+## Libraries
+- yfinance — fetches live stock prices from Yahoo Finance
+- tabulate — formats portfolio data into a readable table
+- csv, sys, os — Python built-in libraries
+
+## Design choices
+The portfolio is stored as a CSV file so data persists between sessions without needing a database.
+Helper functions validate_ticker(), calculate_gain_loss(), and calculate_current_value() are separated from the main logic to keep the code clean and testable with pytest.

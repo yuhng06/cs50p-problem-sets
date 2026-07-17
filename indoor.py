@@ -1,0 +1,5 @@
+Outdoorvoice = input('hey what are you doing? ') .strip() .lower()
+print('hey, we are indoors, use your indoor voice.')
+print('lets try that again. ')
+print(Outdoorvoice)
+print('see, thats better.')
